@@ -1,0 +1,15 @@
+# Build output — deployed via GitHub Pages artifact, not committed to source
+dist/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# macOS
+.DS_Store
+
+# Editor
+.vscode/settings.json
+.idea/
+*.swp
+*.swo

@@ -1,0 +1,19 @@
+{
+  "name": "presentations",
+  "version": "1.0.0",
+  "description": "Marp-based presentation repository published via GitHub Pages",
+  "private": true,
+  "scripts": {
+    "build": "bash scripts/build.sh && node scripts/generate-index.js",
+    "build:slides": "bash scripts/build.sh",
+    "build:index": "node scripts/generate-index.js",
+    "dev": "marp --server presentations/sample/slides.md --theme-set themes/ --watch",
+    "preview": "npx serve dist"
+  },
+  "devDependencies": {
+    "@marp-team/marp-cli": "^4.1.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

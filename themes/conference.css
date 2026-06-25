@@ -1,0 +1,317 @@
+/* =============================================================================
+   Marp Custom Theme: conference
+   =============================================================================
+   High-contrast, bold theme for conference and external presentations.
+   Supports: title, section, content (default), two-column layouts.
+   ============================================================================= */
+
+/* @theme conference */
+
+@import 'default';
+
+/* --------------------------------------------------------------------------- *
+ * Design tokens
+ * --------------------------------------------------------------------------- */
+:root {
+  /* Brand palette — deep teal / vivid amber accent */
+  --color-primary:      #0d3349;
+  --color-primary-mid:  #134f6e;
+  --color-accent:       #e67e22;   /* amber       */
+  --color-accent-light: #f39c12;
+  --color-bg:           #ffffff;
+  --color-bg-alt:       #f4f6f7;
+  --color-surface:      #ffffff;
+  --color-text:         #17202a;
+  --color-text-muted:   #626567;
+  --color-border:       #ccd1d1;
+  --color-code-bg:      #0d1b2a;
+  --color-code-text:    #d5e8f5;
+
+  /* Same Japanese-first font stack — system fonts only */
+  --font-body:
+    "BIZ UDPGothic",
+    "Yu Gothic",
+    "Hiragino Sans",
+    "Hiragino Kaku Gothic ProN",
+    "Noto Sans JP",
+    "Meiryo",
+    sans-serif;
+  --font-mono:
+    "SFMono-Regular",
+    Consolas,
+    "Liberation Mono",
+    Menlo,
+    monospace;
+
+  --slide-w: 1280px;
+  --slide-h:  720px;
+  --pad-x:   80px;
+  --pad-y:   60px;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Base slide
+ * --------------------------------------------------------------------------- */
+section {
+  width:       var(--slide-w);
+  height:      var(--slide-h);
+  padding:     var(--pad-y) var(--pad-x);
+  background:  var(--color-bg);
+  color:       var(--color-text);
+  font-family: var(--font-body);
+  font-size:   28px;
+  line-height: 1.65;
+  box-sizing:  border-box;
+  overflow:    hidden;
+  position:    relative;
+}
+
+/* Bottom accent bar */
+section::before {
+  content:    "";
+  position:   absolute;
+  left:       0; right: 0; bottom: 0;
+  height:     6px;
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-accent) 100%);
+}
+
+/* --------------------------------------------------------------------------- *
+ * Headings
+ * --------------------------------------------------------------------------- */
+h1 {
+  font-size:     1.9em;
+  font-weight:   800;
+  color:         var(--color-primary);
+  margin:        0 0 0.45em;
+  line-height:   1.15;
+  letter-spacing: -0.015em;
+  border-left:   6px solid var(--color-accent);
+  padding-left:  0.4em;
+}
+
+h2 {
+  font-size:      1.3em;
+  font-weight:    700;
+  color:          var(--color-primary-mid);
+  margin:         0 0 0.35em;
+  border-bottom:  2px solid var(--color-border);
+  padding-bottom: 0.2em;
+}
+
+h3 {
+  font-size:   1.05em;
+  font-weight: 600;
+  color:       var(--color-accent);
+  margin:      0 0 0.25em;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Body text
+ * --------------------------------------------------------------------------- */
+p   { margin: 0 0 0.6em; }
+
+strong { color: var(--color-primary); font-weight: 700; }
+em     { color: var(--color-accent);  font-style: normal; font-weight: 600; }
+
+a {
+  color:           var(--color-accent);
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Lists
+ * --------------------------------------------------------------------------- */
+ul, ol {
+  padding-left: 1.4em;
+  margin:       0 0 0.6em;
+}
+
+li { margin-bottom: 0.25em; }
+
+li::marker { color: var(--color-accent); }
+
+/* --------------------------------------------------------------------------- *
+ * Code
+ * --------------------------------------------------------------------------- */
+code {
+  font-family:  var(--font-mono);
+  font-size:    0.82em;
+  background:   var(--color-code-bg);
+  color:        var(--color-code-text);
+  padding:      0.1em 0.4em;
+  border-radius: 4px;
+}
+
+pre {
+  background:    var(--color-code-bg);
+  color:         var(--color-code-text);
+  font-family:   var(--font-mono);
+  font-size:     0.72em;
+  line-height:   1.5;
+  padding:       1em 1.2em;
+  border-radius: 8px;
+  border-left:   4px solid var(--color-accent);
+  overflow:      hidden;
+  margin:        0.5em 0;
+}
+
+pre code {
+  background: transparent;
+  padding:    0;
+  font-size:  1em;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Tables
+ * --------------------------------------------------------------------------- */
+table {
+  width:           100%;
+  border-collapse: collapse;
+  font-size:       0.85em;
+  margin:          0.5em 0;
+}
+
+th {
+  background:  var(--color-primary);
+  color:       #fff;
+  font-weight: 700;
+  padding:     0.45em 0.8em;
+  text-align:  left;
+}
+
+td {
+  padding:       0.4em 0.8em;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tr:nth-child(even) td { background: var(--color-bg-alt); }
+
+/* --------------------------------------------------------------------------- *
+ * Blockquote
+ * --------------------------------------------------------------------------- */
+blockquote {
+  border-left:   4px solid var(--color-accent);
+  background:    var(--color-bg-alt);
+  margin:        0.5em 0;
+  padding:       0.6em 1em;
+  border-radius: 0 6px 6px 0;
+  color:         var(--color-text-muted);
+  font-style:    italic;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Images
+ * --------------------------------------------------------------------------- */
+img {
+  max-width:  100%;
+  max-height: 100%;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Footnotes / footer
+ * --------------------------------------------------------------------------- */
+footer,
+section > *:last-child[data-marpit-pagination] {
+  font-size: 0.55em;
+  color:     var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------- *
+ * Pagination
+ * --------------------------------------------------------------------------- */
+section::after {
+  content:   attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  position:  absolute;
+  right:     var(--pad-x);
+  bottom:    16px;
+  font-size: 0.5em;
+  color:     var(--color-text-muted);
+}
+
+/* --------------------------------------------------------------------------- *
+ * Layout: title slide  (<!-- _class: title -->)
+ * --------------------------------------------------------------------------- */
+section.title {
+  background: linear-gradient(140deg, var(--color-primary) 0%, var(--color-primary-mid) 55%, #1a6385 100%);
+  color:      #fff;
+  display:    flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--pad-y) calc(var(--pad-x) + 20px);
+}
+
+section.title::before { display: none; }
+
+section.title h1 {
+  color:         #fff;
+  border-left:   6px solid var(--color-accent);
+  font-size:     2.4em;
+  font-weight:   800;
+  line-height:   1.12;
+  margin-bottom: 0.3em;
+  text-shadow:   0 2px 10px rgba(0,0,0,0.3);
+}
+
+section.title h2 {
+  color:        rgba(255,255,255,0.82);
+  font-size:    1.1em;
+  font-weight:  400;
+  border:       none;
+  padding:      0;
+  margin-bottom: 0.6em;
+}
+
+section.title p,
+section.title ul,
+section.title li {
+  color:     rgba(255,255,255,0.75);
+  font-size: 0.75em;
+}
+
+section.title li::marker { color: var(--color-accent); }
+
+section.title::after { color: rgba(255,255,255,0.4); }
+
+/* --------------------------------------------------------------------------- *
+ * Layout: section break  (<!-- _class: section -->)
+ * --------------------------------------------------------------------------- */
+section.section {
+  background:     var(--color-bg-alt);
+  display:        flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:    flex-start;
+}
+
+section.section h1 {
+  border-left: 8px solid var(--color-accent);
+  font-size:   2.1em;
+  color:       var(--color-primary);
+  margin:      0;
+}
+
+section.section h2 {
+  color:        var(--color-text-muted);
+  font-size:    1em;
+  font-weight:  400;
+  border:       none;
+  padding:      0;
+  padding-left: 0.95em;
+  margin-top:   0.3em;
+}
+
+/* --------------------------------------------------------------------------- *
+ * Layout: two-column  (<!-- _class: two-column -->)
+ * --------------------------------------------------------------------------- */
+section.two-column {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows:    auto 1fr;
+  column-gap:            48px;
+}
+
+section.two-column h1 {
+  grid-column:   1 / -1;
+  font-size:     1.5em;
+  margin-bottom: 0.4em;
+}
