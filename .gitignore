@@ -13,3 +13,7 @@ npm-debug.log*
 .idea/
 *.swp
 *.swo
+
+# idea
+presentations/join-CloudNative/
+presentations/join-CloudNative/*
