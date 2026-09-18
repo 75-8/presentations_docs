@@ -303,15 +303,12 @@ section.section h2 {
 /* --------------------------------------------------------------------------- *
  * Layout: two-column  (<!-- _class: two-column -->)
  * --------------------------------------------------------------------------- */
-section.two-column {
-  display:               grid;
+section.two-column .columns {
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows:    auto 1fr;
-  column-gap:            48px;
+  gap: 48px;
 }
 
-section.two-column h1 {
-  grid-column:   1 / -1;
-  font-size:     1.5em;
-  margin-bottom: 0.4em;
+section.two-column .columns > div {
+  min-width: 0;
 }
