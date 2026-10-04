@@ -2,6 +2,16 @@
 marp: true
 theme: conference
 paginate: true
+
+title: インフラ作ってみた
+date: 2026-10-04
+
+author: サンプル著者
+description: Marp と GitHub Pages を使ったプレゼンテーション公開の基本を紹介するサンプルスライドです。
+tags:
+  - azure
+  - foundry
+  - infra
 ---
 
 # インフラ未経験2ヶ月目、製造業のAI基盤を作ってみた
@@ -253,38 +263,38 @@ AIを使えるだけではなく、使った後に管理できる状態を作る
 # できあがったもの
 
 ```text
-                 ┌──────────────┐
-                 │ Coding Agent │
-                 └──────┬───────┘
-                        │ Entra ID認証
-                        ▼
-                 ┌──────────────┐
-                 │     APIM     │
-                 │              │
-                 │ 認証          │
-                 │ 利用者制御    │
-                 │ Policy       │
-                 └──────┬───────┘
+     ┌──────────────┐
+     │ Coding Agent │
+     └──────┬───────┘
+                │ Entra ID認証
+                ▼
+     ┌──────────────┐
+     │     APIM     │
+     │              │
+     │ 認証          │
+     │ 利用者制御    │
+     │ Policy       │
+     └──────┬───────┘
+                 │
+           Managed Identity
+                 │
+                 ▼
+     ┌──────────────┐
+     │ AI Foundry   │
+     │     LLM      │
+     └──────┬───────┘
+                 │
+             Monitoring
+                 ▼
+       Application Insights
+            │          │
+          Metric       Log
+            │          │
+            ▼          ▼
+       Dashboard   Blob Storage
                         │
-                 Managed Identity
-                        │
                         ▼
-                 ┌──────────────┐
-                 │ AI Foundry   │
-                 │     LLM      │
-                 └──────┬───────┘
-                        │
-                  Monitoring
-                        ▼
-               Application Insights
-                   │          │
-                Metric       Log
-                   │          │
-                   ▼          ▼
-              Dashboard   Blob Storage
-                              │
-                              ▼
-                           Power BI
+                     Power BI
 ```
 
 <!--
