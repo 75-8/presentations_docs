@@ -404,3 +404,6 @@ AIがコードを書いたり、開発作業を行ったりすることを前提
 を持ち帰ってもらいたい。
 -->
 
+---
+
+![bg contain](./assets/apim_foundry_blob_ai_platform_architecture_horizontal.svg)
