@@ -3,6 +3,9 @@ marp: true
 theme: conference
 paginate: true
 
+title: "NAGOYA BOOST 調査レポート"
+date: 2026-10-17
+
 header: "NAGOYA BOOST 調査レポート"
 footer: "so ku se ki"
 
