@@ -13,10 +13,10 @@ author: 75-8
 description: 無茶ぶりで作ることになったスライド
 tags:
   - nagoya
-  - DX
-  - AI
+    - DX
+      - AI
 
----
+      ---
 # 名古屋からイノベーションを起こす！
 ## イノベーター育成プログラム「NAGOYA BOOST」概要
 
