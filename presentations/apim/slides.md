@@ -1,16 +1,23 @@
 ---
-
 marp: true
-theme: default
+theme: conference
 paginate: true
-size: 16:9
+
+title: 信頼しているからこそ、情報を渡さない
+date: 2026-11-26
+
+author: 75-8
+description: 生成AI基盤におけるシークレットレス設計と、その判断が実際に効いた話
+tags:
+  - azure
+  - apim
+  - infra
+
 
 <!--
 タイトル：
 信頼しているからこそ、情報を渡さない
 
-副題：
-生成AI基盤におけるシークレットレス設計と、その判断が実際に効いた話
 
 発表時間：5分
 想定：8枚

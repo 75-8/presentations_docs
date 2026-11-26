@@ -10,8 +10,8 @@ author: 75-8
 description: IT未経験からインフラ作る事になった著者が初めに思ったこと
 tags:
   - azure
-  - foundry
-  - infra
+    - foundry
+      - infra
 ---
 
 # インフラ未経験2ヶ月目、</br>製造業のAI基盤を作ってみた
